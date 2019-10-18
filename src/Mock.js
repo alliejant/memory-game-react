@@ -17,7 +17,7 @@ class Mock extends Component {
 
   callApi = async () => {
     try {
-      const response = await axios.get(`${serverAddress}`);
+      const response = await axios.get(`${serverAddress}/mock`);
       if (response.data && response.data.express) {
         this.setState({ response: response.data.express });
       } else {
@@ -32,7 +32,7 @@ class Mock extends Component {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${serverAddress}`,
+        `${serverAddress}/mock`,
         { post: this.state.post },
         {
           headers: {
